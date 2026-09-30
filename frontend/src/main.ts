@@ -17,6 +17,7 @@ import '@/styles/icon/iconfont.css'
 import App from '@/App.vue'
 import store from '@/store'
 import router from '@/router'
+import i18n from '@/lang'
 import '@/icons/components'
 import '@/permission'
 import { checkProcessEnv } from '@/utils/common'
@@ -40,5 +41,6 @@ Vue.prototype.$echarts = echarts
 new Vue({
   router,
   store,
+  i18n,
   'render': (h) => h(App)
 }).$mount('#app')

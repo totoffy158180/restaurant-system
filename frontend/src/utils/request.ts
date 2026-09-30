@@ -8,6 +8,7 @@ import {
   removePending
 } from './requestOptimize'
 import router from '@/router'
+import { translateError } from '@/lang'
 const CancelToken = axios.CancelToken;
 
 const service = axios.create({
@@ -85,6 +86,9 @@ service.interceptors.response.use(
     // 请求完成，删除请求中状态
     const key = getRequestKey(response.config);
     removePending(key);
+    if (response.data.code === 0 && response.data.msg) {
+      response.data.msg = translateError(response.data.msg, response.data.data)
+    }
     // if (response.data.code === 0) {
     //   Message.error(response.data.msg)
     //   // if(response.data.msg === 'NOTLOGIN' || response.data.msg === '未登录'){

@@ -1,0 +1,23 @@
+{
+  "errors": {
+    "PASSWORD_ERROR": "密碼錯誤",
+    "ACCOUNT_NOT_FOUND": "帳號不存在",
+    "ACCOUNT_LOCKED": "帳號已被鎖定",
+    "ALREADY_EXIST": "{name} 已存在",
+    "UNKNOWN_ERROR": "未知錯誤",
+    "USER_NOT_LOGIN": "使用者未登入",
+    "CATEGORY_BE_RELATED_BY_SETMEAL": "目前分類已關聯套餐，無法刪除",
+    "CATEGORY_BE_RELATED_BY_DISH": "目前分類已關聯菜品，無法刪除",
+    "SHOPPING_CART_IS_NULL": "購物車是空的，無法下單",
+    "ADDRESS_BOOK_IS_NULL": "使用者地址為空，無法下單",
+    "LOGIN_FAILED": "登入失敗",
+    "UPLOAD_FAILED": "檔案上傳失敗",
+    "SETMEAL_ENABLE_FAILED": "套餐內含有停售的菜品，無法起售",
+    "PASSWORD_EDIT_FAILED": "密碼修改失敗",
+    "DISH_ON_SALE": "起售中的菜品無法刪除",
+    "SETMEAL_ON_SALE": "起售中的套餐無法刪除",
+    "DISH_BE_RELATED_BY_SETMEAL": "目前菜品已關聯套餐，無法刪除",
+    "ORDER_STATUS_ERROR": "訂單狀態錯誤",
+    "ORDER_NOT_FOUND": "訂單不存在"
+  }
+}
