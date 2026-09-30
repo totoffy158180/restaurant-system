@@ -2,15 +2,15 @@ services:
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
       MYSQL_DATABASE: sky_take_out
     ports:
-      - "3307:3306"
+      - "127.0.0.1:${MYSQL_PORT:-3307}:3306"
     volumes:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
       - mysql-data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p\"$$MYSQL_ROOT_PASSWORD\""]
       interval: 5s
       timeout: 5s
       retries: 20
@@ -22,10 +22,13 @@ services:
     build: ./backend
     environment:
       DB_HOST: mysql
-      DB_PASSWORD: root
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
       REDIS_HOST: redis
+      JWT_ADMIN_SECRET: ${JWT_ADMIN_SECRET:-itcast}
+      OSS_ACCESS_KEY_ID: ${OSS_ACCESS_KEY_ID:-}
+      OSS_ACCESS_KEY_SECRET: ${OSS_ACCESS_KEY_SECRET:-}
     ports:
-      - "8082:8080"
+      - "127.0.0.1:${BACKEND_PORT:-8082}:8080"
     depends_on:
       mysql:
         condition: service_healthy
@@ -35,7 +38,7 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "80:80"
+      - "${FRONTEND_PORT:-80}:80"
     depends_on:
       - backend
 
