@@ -1,0 +1,33 @@
+# ===== 全域 =====
+.DS_Store
+*.log
+logs/
+.env
+.env.local
+.env.*.local
+.idea/
+*.iml
+.vscode/
+.history/
+*.sw*
+
+# ===== backend =====
+target/
+*.class
+# 本機專用設定（含金鑰），不進版控
+application-local.yml
+dump.rdb
+# 課程原本排除測試檔，之後要跑 CI 測試再拿掉
+*Test.java
+**/test/
+
+# ===== frontend =====
+node_modules/
+/frontend/dist/
+/frontend/tests/e2e/videos/
+/frontend/tests/e2e/screenshots/
+/frontend/tests/**/coverage/
+report.*.json
+
+# ===== 本機交接筆記 =====
+HANDOFF.md
