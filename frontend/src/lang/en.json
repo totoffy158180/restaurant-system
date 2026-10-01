@@ -48,6 +48,14 @@
     "reenter": "Please enter the password again",
     "mismatch": "Passwords do not match, please re-enter"
   },
+  "login": {
+    "username": "Username",
+    "password": "Password",
+    "submit": "Log In",
+    "loading": "Logging in...",
+    "usernameRequired": "Please enter your username",
+    "passwordLength": "Password must be at least 6 characters"
+  },
   "errors": {
     "PASSWORD_ERROR": "Incorrect password",
     "ACCOUNT_NOT_FOUND": "Account not found",

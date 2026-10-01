@@ -24,16 +24,7 @@
           <source src="./../../../assets/reminder.mp3" type="audio/mp3" />
         </audio>
         <span class="navicon operatingState" @click="handleStatus"><i />{{ $t('navbar.statusSetting') }}</span>
-        <div class="languageSwitch">
-          <template v-for="(item, index) in languages">
-            <i v-if="index > 0"
-               :key="item.value + '-divider'"
-               class="divider">|</i>
-            <a :key="item.value"
-               :class="{ active: item.value === $i18n.locale }"
-               @click="handleLanguage(item.value)">{{ item.label }}</a>
-          </template>
-        </div>
+        <language-switch class="languageSwitch" />
       </div>
       <div class="avatar-wrapper">
         <div :class="shopShow?'userInfo':''"
@@ -93,11 +84,11 @@ import { AppModule } from '@/store/modules/app'
 import { UserModule } from '@/store/modules/user'
 import Breadcrumb from '@/components/Breadcrumb/index.vue'
 import Hamburger from '@/components/Hamburger/index.vue'
+import LanguageSwitch from '@/components/LanguageSwitch/index.vue'
 import { getStatus, setStatus } from '@/api/users'
 import Cookies from 'js-cookie'
 import { debounce, throttle } from '@/utils/common'
 import { setNewData, getNewData } from '@/utils/cookies'
-import { languages, changeLanguage } from '@/lang'
 
 // 接口
 import { getCountUnread } from '@/api/inform'
@@ -109,6 +100,7 @@ import Password from '../components/password.vue'
   components: {
     Breadcrumb,
     Hamburger,
+    LanguageSwitch,
     Password,
   },
 })
@@ -128,7 +120,6 @@ export default class extends Vue {
   private setStatus = 1
   private dialogFormVisible = false
   private ountUnread = 0
-  private languages = languages
   // get ountUnread() {
   //   return Number(getNewData())
   // }
@@ -304,13 +295,6 @@ export default class extends Vue {
       this.dialogVisible = false
       this.getStatus()
     }
-  }
-  handleLanguage(language: string) {
-    if (language === this.$i18n.locale) {
-      return
-    }
-    changeLanguage(language)
-    document.title = this.$t(this.$route.meta.title) as string
   }
   // 修改密码
   handlePwd() {
@@ -507,26 +491,6 @@ export default class extends Vue {
   }
   .languageSwitch {
     margin-left: 16px;
-    font-size: 14px;
-    user-select: none;
-    a {
-      color: rgba(51, 51, 51, 0.5);
-      cursor: pointer;
-      transition: color 0.2s;
-      &:hover {
-        color: #333333;
-      }
-      &.active {
-        color: #333333;
-        font-weight: 700;
-        cursor: default;
-      }
-    }
-    .divider {
-      margin: 0 8px;
-      font-style: normal;
-      color: rgba(51, 51, 51, 0.35);
-    }
   }
   .operatingState {
     i {

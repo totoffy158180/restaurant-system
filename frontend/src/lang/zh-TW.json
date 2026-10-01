@@ -48,6 +48,14 @@
     "reenter": "請再次輸入密碼",
     "mismatch": "密碼不一致，請重新輸入"
   },
+  "login": {
+    "username": "帳號",
+    "password": "密碼",
+    "submit": "登入",
+    "loading": "登入中...",
+    "usernameRequired": "請輸入使用者名稱",
+    "passwordLength": "密碼必須在 6 位以上"
+  },
   "errors": {
     "PASSWORD_ERROR": "密碼錯誤",
     "ACCOUNT_NOT_FOUND": "帳號不存在",
