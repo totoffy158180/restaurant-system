@@ -397,6 +397,8 @@
     "ADDRESS_BOOK_IS_NULL": "使用者地址為空，無法下單",
     "LOGIN_FAILED": "登入失敗",
     "UPLOAD_FAILED": "檔案上傳失敗",
+    "UPLOAD_TYPE_NOT_ALLOWED": "僅能上傳 JPG、PNG、GIF、WEBP 格式的圖片",
+    "UPLOAD_SIZE_EXCEEDED": "上傳的檔案大小不能超過 2MB",
     "SETMEAL_ENABLE_FAILED": "套餐內含有停售的菜品，無法起售",
     "PASSWORD_EDIT_FAILED": "密碼修改失敗",
     "DISH_ON_SALE": "起售中的菜品無法刪除",

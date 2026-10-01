@@ -12,6 +12,10 @@ spring:
     database: ${sky.redis.database}
   main:
     allow-circular-references: true
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 3MB
   datasource:
     druid:
       driver-class-name: ${sky.datasource.driver-class-name}

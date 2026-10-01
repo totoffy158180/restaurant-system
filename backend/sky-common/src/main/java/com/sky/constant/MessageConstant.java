@@ -17,6 +17,8 @@ public class MessageConstant {
     public static final String ADDRESS_BOOK_IS_NULL = "ADDRESS_BOOK_IS_NULL";
     public static final String LOGIN_FAILED = "LOGIN_FAILED";
     public static final String UPLOAD_FAILED = "UPLOAD_FAILED";
+    public static final String UPLOAD_TYPE_NOT_ALLOWED = "UPLOAD_TYPE_NOT_ALLOWED";
+    public static final String UPLOAD_SIZE_EXCEEDED = "UPLOAD_SIZE_EXCEEDED";
     public static final String SETMEAL_ENABLE_FAILED = "SETMEAL_ENABLE_FAILED";
     public static final String PASSWORD_EDIT_FAILED = "PASSWORD_EDIT_FAILED";
     public static final String DISH_ON_SALE = "DISH_ON_SALE";

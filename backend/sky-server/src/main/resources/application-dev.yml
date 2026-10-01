@@ -13,6 +13,20 @@ sky:
     access-key-secret: ${OSS_ACCESS_KEY_SECRET:}
     bucket-name: ${OSS_BUCKET_NAME:spring-boot-order-system}
 
+  storage:
+    type: ${STORAGE_TYPE:local}
+    local:
+      dir: ${STORAGE_LOCAL_DIR:uploads}
+      url-prefix: /uploads
+    s3:
+      endpoint: ${S3_ENDPOINT:}
+      region: ${S3_REGION:us-east-1}
+      bucket: ${S3_BUCKET:}
+      access-key-id: ${S3_ACCESS_KEY_ID:}
+      access-key-secret: ${S3_ACCESS_KEY_SECRET:}
+      public-url-prefix: ${S3_PUBLIC_URL_PREFIX:}
+      path-style-access: ${S3_PATH_STYLE_ACCESS:false}
+
   redis:
     host: ${REDIS_HOST:localhost}
     port: ${REDIS_PORT:6379}

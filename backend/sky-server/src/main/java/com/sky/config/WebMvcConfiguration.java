@@ -2,6 +2,7 @@ package com.sky.config;
 
 import com.sky.interceptor.JwtTokenAdminInterceptor;
 import com.sky.json.JacksonObjectMapper;
+import com.sky.properties.StorageProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
+import java.nio.file.Paths;
 import java.util.List;
 
 /**
@@ -29,6 +31,9 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
     @Autowired
     private JwtTokenAdminInterceptor jwtTokenAdminInterceptor;
+
+    @Autowired
+    private StorageProperties storageProperties;
 
     /**
      * 注册自定义拦截器
@@ -90,6 +95,10 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+        StorageProperties.Local local = storageProperties.getLocal();
+        String location = Paths.get(local.getDir()).toAbsolutePath().normalize().toUri().toString();
+        registry.addResourceHandler(local.getUrlPrefix().replaceAll("/+$", "") + "/**")
+                .addResourceLocations(location.endsWith("/") ? location : location + "/");
     }
 
     @Override

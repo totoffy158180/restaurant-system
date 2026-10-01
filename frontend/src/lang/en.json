@@ -397,6 +397,8 @@
     "ADDRESS_BOOK_IS_NULL": "Address is empty, cannot place order",
     "LOGIN_FAILED": "Login failed",
     "UPLOAD_FAILED": "File upload failed",
+    "UPLOAD_TYPE_NOT_ALLOWED": "Only JPG, PNG, GIF, and WEBP images are allowed",
+    "UPLOAD_SIZE_EXCEEDED": "File size cannot exceed 2MB",
     "SETMEAL_ENABLE_FAILED": "Set meal contains dishes that are not on sale and cannot be enabled",
     "PASSWORD_EDIT_FAILED": "Failed to change password",
     "DISH_ON_SALE": "Dishes on sale cannot be deleted",
