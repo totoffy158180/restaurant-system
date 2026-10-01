@@ -25,7 +25,11 @@
     "startSale": "Enable",
     "stopSale": "Disable",
     "noData": "No data",
-    "add": "Add"
+    "add": "Add",
+    "to": "to",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "operationSuccess": "Done"
   },
   "route": {
     "appName": "Sky Take-out",
@@ -293,6 +297,92 @@
     },
     "addSuccess": "Set meal added!",
     "editSuccess": "Set meal updated!"
+  },
+  "order": {
+    "numberLabel": "Order No.:",
+    "numberPlaceholder": "Enter order number",
+    "phoneLabel": "Phone:",
+    "phonePlaceholder": "Enter phone",
+    "orderTimeLabel": "Order Time:",
+    "status": {
+      "all": "All Orders",
+      "pendingPayment": "Pending Payment",
+      "toBeConfirmed": "To Be Accepted",
+      "confirmed": "To Be Delivered",
+      "deliveryInProgress": "Delivering",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "refund": "Refunded"
+    },
+    "column": {
+      "number": "Order No.",
+      "dishes": "Dishes",
+      "status": "Status",
+      "consignee": "Customer",
+      "phone": "Phone",
+      "address": "Address",
+      "orderTime": "Order Time",
+      "cancelTime": "Cancelled At",
+      "cancelReason": "Cancel Reason",
+      "deliveryTime": "Delivered At",
+      "estimatedDeliveryTime": "Est. Delivery",
+      "amount": "Amount",
+      "remark": "Notes",
+      "tableware": "Utensils"
+    },
+    "action": {
+      "accept": "Accept",
+      "deliver": "Deliver",
+      "complete": "Complete",
+      "reject": "Reject",
+      "cancel": "Cancel",
+      "view": "View",
+      "cancelOrder": "Cancel Order"
+    },
+    "detail": {
+      "title": "Order Details",
+      "consignee": "Customer:",
+      "deliveryTime": "Delivered At:",
+      "estimatedDeliveryTime": "Est. Delivery:",
+      "address": "Address:",
+      "dishes": "Dishes",
+      "dishSubtotal": "Subtotal",
+      "fees": "Fees",
+      "dishSubtotalLabel": "Subtotal:",
+      "deliveryFee": "Delivery Fee:",
+      "packingFee": "Packing Fee:",
+      "total": "Total:",
+      "payMethod": "Payment:",
+      "wechatPay": "WeChat Pay",
+      "alipay": "Alipay",
+      "payTime": "Paid At:",
+      "autoNext": "Go to next order after processing"
+    },
+    "reason": {
+      "busy": "Too many orders, cannot accept now",
+      "soldOut": "Dishes sold out, cannot accept now",
+      "closed": "Restaurant closed, cannot accept now",
+      "noRider": "No riders available for delivery",
+      "customerCancel": "Cancelled by customer phone call",
+      "custom": "Custom reason"
+    },
+    "reasonDialog": {
+      "customLabel": "Details:",
+      "reject": {
+        "title": "Rejection Reason",
+        "label": "Reason:",
+        "placeholder": "Select a rejection reason",
+        "customPlaceholder": "Enter the rejection reason (max 20 characters)",
+        "inputRequired": "Please enter the rejection reason"
+      },
+      "cancel": {
+        "title": "Cancellation Reason",
+        "label": "Reason:",
+        "placeholder": "Select a cancellation reason",
+        "customPlaceholder": "Enter the cancellation reason (max 20 characters)",
+        "inputRequired": "Please enter the cancellation reason"
+      }
+    }
   },
   "errors": {
     "PASSWORD_ERROR": "Incorrect password",
