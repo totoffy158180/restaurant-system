@@ -3,6 +3,7 @@
     <div class="login-box">
       <img src="@/assets/login/login-l.png" alt="" />
       <div class="login-form">
+        <language-switch class="login-language" />
         <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
           <div class="login-form-title">
             <img
@@ -17,7 +18,7 @@
               v-model="loginForm.username"
               type="text"
               auto-complete="off"
-              placeholder="账号"
+              :placeholder="$t('login.username')"
               prefix-icon="iconfont icon-user"
             />
           </el-form-item>
@@ -25,7 +26,7 @@
             <el-input
               v-model="loginForm.password"
               type="password"
-              placeholder="密码"
+              :placeholder="$t('login.password')"
               prefix-icon="iconfont icon-lock"
               @keyup.enter.native="handleLogin"
             />
@@ -39,8 +40,8 @@
               style="width: 100%"
               @click.native.prevent="handleLogin"
             >
-              <span v-if="!loading">登录</span>
-              <span v-else>登录中...</span>
+              <span v-if="!loading">{{ $t('login.submit') }}</span>
+              <span v-else>{{ $t('login.loading') }}</span>
             </el-button>
           </el-form-item>
         </el-form>
@@ -55,21 +56,25 @@ import { Route } from 'vue-router'
 import { Form as ElForm, Input } from 'element-ui'
 import { UserModule } from '@/store/modules/user'
 import { isValidUsername } from '@/utils/validate'
+import LanguageSwitch from '@/components/LanguageSwitch/index.vue'
 
 @Component({
   name: 'Login',
+  components: {
+    LanguageSwitch,
+  },
 })
 export default class extends Vue {
   private validateUsername = (rule: any, value: string, callback: Function) => {
     if (!value) {
-      callback(new Error('请输入用户名'))
+      callback(new Error(this.$t('login.usernameRequired') as string))
     } else {
       callback()
     }
   }
   private validatePassword = (rule: any, value: string, callback: Function) => {
     if (value.length < 6) {
-      callback(new Error('密码必须在6位以上'))
+      callback(new Error(this.$t('login.passwordLength') as string))
     } else {
       callback()
     }
@@ -149,9 +154,15 @@ export default class extends Vue {
   background: #ffffff;
   width: 40%;
   border-radius: 0px 8px 8px 0px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  .login-language {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+  }
   .el-form {
     width: 214px;
     height: 307px;

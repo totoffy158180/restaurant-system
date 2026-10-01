@@ -1,4 +1,389 @@
 {
+  "common": {
+    "cancel": "取消",
+    "confirm": "確定",
+    "save": "儲存",
+    "pleaseEnter": "請輸入",
+    "back": "返回",
+    "search": "查詢",
+    "edit": "修改",
+    "operation": "操作",
+    "enable": "啟用",
+    "disable": "停用",
+    "tip": "提示",
+    "requestError": "請求發生錯誤：{message}",
+    "pleaseSelect": "請選擇",
+    "delete": "刪除",
+    "deleteTitle": "確定刪除",
+    "deleteSuccess": "刪除成功！",
+    "statusEnabled": "啟用",
+    "statusDisabled": "停用",
+    "batchDelete": "批次刪除",
+    "selectToDelete": "請選擇要刪除的項目",
+    "onSale": "啟售",
+    "offSale": "停售",
+    "startSale": "啟售",
+    "stopSale": "停售",
+    "noData": "無資料",
+    "add": "新增",
+    "to": "至",
+    "startDate": "開始日期",
+    "endDate": "結束日期",
+    "operationSuccess": "操作成功"
+  },
+  "route": {
+    "appName": "蒼穹外賣",
+    "dashboard": "工作台",
+    "statistics": "數據統計",
+    "order": "訂單管理",
+    "setmeal": "套餐管理",
+    "dish": "菜品管理",
+    "dishAdd": "新增菜品",
+    "category": "分類管理",
+    "employee": "員工管理",
+    "employeeAdd": "新增員工",
+    "setmealAdd": "新增套餐"
+  },
+  "navbar": {
+    "open": "營業中",
+    "closed": "打烊中",
+    "statusSetting": "營業狀態設定",
+    "changePassword": "修改密碼",
+    "logout": "登出",
+    "openDescription": "目前餐廳處於營業狀態，會自動接收所有訂單，可點選「打烊中」讓店鋪進入打烊狀態。",
+    "closedDescription": "目前餐廳處於打烊狀態，僅接受營業時間內的預訂訂單，可點選「營業中」手動恢復營業。",
+    "notify": {
+      "tip": "提示",
+      "browserUnsupported": "目前的瀏覽器無法接收即時通知，請使用 Google Chrome！",
+      "newOrderTitle": "待接單",
+      "reminderTitle": "催單",
+      "youHave": "您有 1 筆",
+      "pendingOrder": "訂單待處理",
+      "acceptSoon": "請盡快接單",
+      "handle": "去處理",
+      "error": "錯誤",
+      "serverError": "伺服器錯誤，無法接收即時通知"
+    }
+  },
+  "password": {
+    "title": "修改密碼",
+    "oldPassword": "原始密碼：",
+    "newPassword": "新密碼：",
+    "confirmPassword": "確認密碼：",
+    "rule": "6 - 20 位密碼，數字或字母，區分大小寫",
+    "reenter": "請再次輸入密碼",
+    "mismatch": "密碼不一致，請重新輸入"
+  },
+  "login": {
+    "username": "帳號",
+    "password": "密碼",
+    "submit": "登入",
+    "loading": "登入中...",
+    "usernameRequired": "請輸入使用者名稱",
+    "passwordLength": "密碼必須在 6 位以上"
+  },
+  "component": {
+    "empty": {
+      "noData": "這裡空空如也～",
+      "noSearchResult": "抱歉，找不到符合搜尋條件的內容～"
+    },
+    "imageUpload": {
+      "delete": "刪除圖片",
+      "reupload": "重新上傳",
+      "failed": "圖片上傳失敗",
+      "sizeLimit": "上傳的檔案大小不能超過 {size}MB！",
+      "tipSize": "圖片大小不超過 2MB",
+      "tipType": "僅能上傳 PNG、JPEG、JPG 格式的圖片",
+      "tipDimension": "建議上傳 200×200 或 300×300 尺寸的圖片",
+      "upload": "上傳圖片"
+    }
+  },
+  "employee": {
+    "nameLabel": "員工姓名：",
+    "searchPlaceholder": "請輸入員工姓名",
+    "add": "新增員工",
+    "addTitle": "新增員工",
+    "editTitle": "修改員工資訊",
+    "column": {
+      "name": "員工姓名",
+      "username": "帳號",
+      "phone": "手機號碼",
+      "status": "帳號狀態",
+      "updateTime": "最後操作時間"
+    },
+    "statusConfirm": "確定要調整該帳號的狀態嗎？",
+    "statusSuccess": "帳號狀態更改成功！",
+    "form": {
+      "username": "帳號：",
+      "usernamePlaceholder": "請輸入帳號",
+      "name": "員工姓名：",
+      "namePlaceholder": "請輸入員工姓名",
+      "phone": "手機號碼：",
+      "phonePlaceholder": "請輸入手機號碼",
+      "sex": "性別：",
+      "idNumber": "身分證字號：",
+      "idNumberPlaceholder": "請輸入身分證字號"
+    },
+    "sex": {
+      "male": "男",
+      "female": "女"
+    },
+    "saveAndContinue": "儲存並繼續新增",
+    "rules": {
+      "nameRequired": "請輸入員工姓名",
+      "usernameRequired": "請輸入帳號",
+      "usernameInvalid": "帳號格式不符，請輸入 3-20 個小寫英文字母或數字",
+      "phoneRequired": "請輸入手機號碼",
+      "phoneInvalid": "請輸入正確的手機號碼！",
+      "idNumberRequired": "請輸入身分證字號",
+      "idNumberInvalid": "身分證字號格式不正確"
+    },
+    "addSuccess": "員工新增成功！",
+    "editSuccess": "員工資訊修改成功！"
+  },
+  "category": {
+    "nameLabel": "分類名稱：",
+    "searchPlaceholder": "請輸入分類名稱",
+    "typeLabel": "分類類型：",
+    "type": {
+      "dish": "菜品分類",
+      "setmeal": "套餐分類"
+    },
+    "addDishCategory": "新增菜品分類",
+    "addSetmealCategory": "新增套餐分類",
+    "editCategory": "修改分類",
+    "column": {
+      "name": "分類名稱",
+      "type": "分類類型",
+      "sort": "排序",
+      "status": "狀態",
+      "updateTime": "操作時間"
+    },
+    "form": {
+      "name": "分類名稱：",
+      "namePlaceholder": "請輸入分類名稱",
+      "sort": "排序：",
+      "sortPlaceholder": "請輸入排序"
+    },
+    "saveAndContinue": "儲存並繼續新增",
+    "rules": {
+      "nameRequired": "請輸入分類名稱",
+      "nameLength": "分類名稱格式不符，請輸入 2-20 個字元",
+      "nameSpecialChars": "分類名稱不能包含特殊字元",
+      "sortRequired": "請輸入排序",
+      "sortNumber": "排序只能輸入數字",
+      "sortRange": "排序只能輸入 0-99 的數字"
+    },
+    "statusConfirm": "確定要調整該分類的狀態嗎？",
+    "statusSuccess": "分類狀態更改成功！",
+    "deleteConfirm": "此操作將永久刪除該分類，是否繼續？",
+    "addSuccess": "分類新增成功！",
+    "editSuccess": "分類修改成功！"
+  },
+  "dish": {
+    "nameLabel": "菜品名稱：",
+    "searchPlaceholder": "請輸入菜品名稱",
+    "categoryLabel": "菜品分類：",
+    "saleStatusLabel": "售賣狀態：",
+    "add": "新增菜品",
+    "column": {
+      "name": "菜品名稱",
+      "image": "圖片",
+      "category": "菜品分類",
+      "price": "售價",
+      "saleStatus": "售賣狀態",
+      "updateTime": "最後操作時間"
+    },
+    "deleteConfirm": "確定要刪除該菜品嗎？",
+    "selectForBatch": "批次操作前，請先勾選菜品！",
+    "statusConfirm": "確定要更改該菜品的狀態嗎？",
+    "statusSuccess": "菜品狀態更改成功！",
+    "form": {
+      "name": "菜品名稱：",
+      "namePlaceholder": "請輸入菜品名稱",
+      "category": "菜品分類：",
+      "categoryPlaceholder": "請選擇菜品分類",
+      "price": "菜品價格：",
+      "pricePlaceholder": "請設定菜品價格",
+      "flavor": "口味做法設定：",
+      "image": "菜品圖片：",
+      "description": "菜品描述：",
+      "descriptionPlaceholder": "菜品描述，最多 200 字"
+    },
+    "addFlavor": "新增口味",
+    "flavorName": "口味名稱（3 個字以內）",
+    "flavorPlaceholder": "請選擇口味",
+    "flavor": {
+      "sweetness": "甜味",
+      "noSugar": "無糖",
+      "lessSugar": "少糖",
+      "halfSugar": "半糖",
+      "moreSugar": "多糖",
+      "fullSugar": "全糖",
+      "temperature": "溫度",
+      "hot": "熱飲",
+      "roomTemperature": "常溫",
+      "noIce": "去冰",
+      "lessIce": "少冰",
+      "moreIce": "多冰",
+      "avoid": "忌口",
+      "noScallion": "不要蔥",
+      "noGarlic": "不要蒜",
+      "noCilantro": "不要香菜",
+      "noChili": "不要辣",
+      "spiciness": "辣度",
+      "notSpicy": "不辣",
+      "mild": "微辣",
+      "medium": "中辣",
+      "extraSpicy": "重辣"
+    },
+    "saveAndContinue": "儲存並繼續新增",
+    "rules": {
+      "nameRequired": "請輸入菜品名稱",
+      "nameInvalid": "菜品名稱格式不符，請輸入 2-20 個字元",
+      "categoryRequired": "請選擇菜品分類",
+      "imageRequired": "請上傳菜品圖片",
+      "priceInvalid": "請輸入大於零的金額（最多兩位小數）",
+      "codeRequired": "請輸入商品碼"
+    },
+    "addSuccess": "菜品新增成功！",
+    "editSuccess": "菜品修改成功！"
+  },
+  "setmeal": {
+    "nameLabel": "套餐名稱：",
+    "searchPlaceholder": "請輸入套餐名稱",
+    "categoryLabel": "套餐分類：",
+    "saleStatusLabel": "售賣狀態：",
+    "add": "新增套餐",
+    "column": {
+      "name": "套餐名稱",
+      "image": "圖片",
+      "category": "套餐分類",
+      "price": "套餐價",
+      "saleStatus": "售賣狀態",
+      "updateTime": "最後操作時間"
+    },
+    "deleteConfirm": "確定要刪除該套餐嗎？",
+    "selectForBatch": "批次操作前，請先勾選套餐！",
+    "statusConfirm": "確定要更改該套餐的狀態嗎？",
+    "statusSuccess": "套餐狀態更改成功！",
+    "form": {
+      "name": "套餐名稱：",
+      "namePlaceholder": "請輸入套餐名稱",
+      "category": "套餐分類：",
+      "categoryPlaceholder": "請選擇套餐分類",
+      "price": "套餐價格：",
+      "pricePlaceholder": "請設定套餐價格",
+      "dishes": "套餐菜品：",
+      "image": "套餐圖片：",
+      "description": "套餐描述：",
+      "descriptionPlaceholder": "套餐描述，最多 200 字"
+    },
+    "addDish": "新增菜品",
+    "searchDishPlaceholder": "請輸入菜品名稱搜尋",
+    "selectedDishes": "已選菜品（{count}）",
+    "dishColumn": {
+      "name": "名稱",
+      "price": "原價",
+      "copies": "份數"
+    },
+    "saveAndContinue": "儲存並繼續新增",
+    "rules": {
+      "nameRequired": "請輸入套餐名稱",
+      "nameInvalid": "套餐名稱格式不符，請輸入 2-20 個字元",
+      "categoryRequired": "請選擇套餐分類",
+      "imageRequired": "請上傳套餐圖片",
+      "dishesRequired": "套餐內至少要有一道菜品"
+    },
+    "addSuccess": "套餐新增成功！",
+    "editSuccess": "套餐修改成功！"
+  },
+  "order": {
+    "numberLabel": "訂單編號：",
+    "numberPlaceholder": "請輸入訂單編號",
+    "phoneLabel": "手機號碼：",
+    "phonePlaceholder": "請輸入手機號碼",
+    "orderTimeLabel": "下單時間：",
+    "status": {
+      "all": "全部訂單",
+      "pendingPayment": "待付款",
+      "toBeConfirmed": "待接單",
+      "confirmed": "待派送",
+      "deliveryInProgress": "派送中",
+      "completed": "已完成",
+      "cancelled": "已取消",
+      "refund": "退款"
+    },
+    "column": {
+      "number": "訂單編號",
+      "dishes": "訂單菜品",
+      "status": "訂單狀態",
+      "consignee": "使用者名稱",
+      "phone": "手機號碼",
+      "address": "地址",
+      "orderTime": "下單時間",
+      "cancelTime": "取消時間",
+      "cancelReason": "取消原因",
+      "deliveryTime": "送達時間",
+      "estimatedDeliveryTime": "預計送達時間",
+      "amount": "實收金額",
+      "remark": "備註",
+      "tableware": "餐具數量"
+    },
+    "action": {
+      "accept": "接單",
+      "deliver": "派送",
+      "complete": "完成",
+      "reject": "拒單",
+      "cancel": "取消",
+      "view": "查看",
+      "cancelOrder": "取消訂單"
+    },
+    "detail": {
+      "title": "訂單資訊",
+      "consignee": "使用者名稱：",
+      "deliveryTime": "送達時間：",
+      "estimatedDeliveryTime": "預計送達時間：",
+      "address": "地址：",
+      "dishes": "菜品",
+      "dishSubtotal": "菜品小計",
+      "fees": "費用",
+      "dishSubtotalLabel": "菜品小計：",
+      "deliveryFee": "派送費：",
+      "packingFee": "打包費：",
+      "total": "合計：",
+      "payMethod": "支付管道：",
+      "wechatPay": "微信支付",
+      "alipay": "支付寶支付",
+      "payTime": "支付時間：",
+      "autoNext": "處理完自動跳到下一筆"
+    },
+    "reason": {
+      "busy": "訂單量較多，暫時無法接單",
+      "soldOut": "菜品已售完，暫時無法接單",
+      "closed": "餐廳已打烊，暫時無法接單",
+      "noRider": "外送員不足，無法配送",
+      "customerCancel": "客戶來電取消",
+      "custom": "自訂原因"
+    },
+    "reasonDialog": {
+      "customLabel": "原因：",
+      "reject": {
+        "title": "拒單原因",
+        "label": "拒單原因：",
+        "placeholder": "請選擇拒單原因",
+        "customPlaceholder": "請填寫拒單原因（限 20 字內）",
+        "inputRequired": "請輸入拒單原因"
+      },
+      "cancel": {
+        "title": "取消原因",
+        "label": "取消原因：",
+        "placeholder": "請選擇取消原因",
+        "customPlaceholder": "請填寫取消原因（限 20 字內）",
+        "inputRequired": "請輸入取消原因"
+      }
+    }
+  },
   "errors": {
     "PASSWORD_ERROR": "密碼錯誤",
     "ACCOUNT_NOT_FOUND": "帳號不存在",

@@ -1,37 +1,37 @@
 <template>
   <el-dialog
-    title="修改密码"
+    :title="$t('password.title')"
     :visible.sync="dialogFormVisible"
     width="568px"
     class="pwdCon"
     @close="handlePwdClose()"
   >
-    <el-form :model="form" label-width="85px" :rules="rules" ref="form">
-      <el-form-item label="原始密码：" prop="oldPassword">
+    <el-form :model="form" :label-width="$i18n.locale === 'en' ? '150px' : '85px'" :rules="rules" ref="form">
+      <el-form-item :label="$t('password.oldPassword')" prop="oldPassword">
         <el-input
           v-model="form.oldPassword"
           type="password"
-          placeholder="请输入"
+          :placeholder="$t('common.pleaseEnter')"
         ></el-input>
       </el-form-item>
-      <el-form-item label="新密码：" prop="newPassword">
+      <el-form-item :label="$t('password.newPassword')" prop="newPassword">
         <el-input
           v-model="form.newPassword"
           type="password"
-          placeholder="6 - 20位密码，数字或字母，区分大小写"
+          :placeholder="$t('password.rule')"
         ></el-input>
       </el-form-item>
-      <el-form-item label="确认密码：" prop="affirmPassword">
+      <el-form-item :label="$t('password.confirmPassword')" prop="affirmPassword">
         <el-input
           v-model="form.affirmPassword"
           type="password"
-          placeholder="请输入"
+          :placeholder="$t('common.pleaseEnter')"
         ></el-input>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
-      <el-button @click="handlePwdClose()">取 消</el-button>
-      <el-button type="primary" @click="handleSave()">保 存</el-button>
+      <el-button @click="handlePwdClose()">{{ $t('common.cancel') }}</el-button>
+      <el-button type="primary" @click="handleSave()">{{ $t('common.save') }}</el-button>
     </div>
   </el-dialog>
 </template>
@@ -48,18 +48,18 @@ export default class extends Vue {
   private validatePwd = (rule: any, value: any, callback: Function) => {
     const reg = /^[0-9A-Za-z]{6,20}$/
     if (!value) {
-      callback(new Error('请输入'))
+      callback(new Error(this.$t('common.pleaseEnter') as string))
     } else if (!reg.test(value)) {
-      callback(new Error('6 - 20位密码，数字或字母，区分大小写'))
+      callback(new Error(this.$t('password.rule') as string))
     } else {
       callback()
     }
   }
   private validatePass2 = (rule, value, callback) => {
     if (!value) {
-      callback(new Error('请再次输入密码'))
+      callback(new Error(this.$t('password.reenter') as string))
     } else if (value !== this.form.newPassword) {
-      callback(new Error('密码不一致，请重新输入密码'))
+      callback(new Error(this.$t('password.mismatch') as string))
     } else {
       callback()
     }

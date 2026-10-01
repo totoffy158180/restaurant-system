@@ -10,7 +10,7 @@
                 class="item"
                 :value="item.num > 99 ? '99+' : item.num"
                 :hidden="!([2, 3, 4].includes(item.value) && item.num)">
-        {{ item.label }}
+        {{ $t(item.label) }}
       </el-badge>
     </div>
   </div>
@@ -36,30 +36,30 @@ export default class extends Vue {
   get changedOrderList() {
     return [
       {
-        label: '全部订单',
+        label: 'order.status.all',
         value: 0
       },
       {
-        label: '待接单',
+        label: 'order.status.toBeConfirmed',
         value: 2,
         num: this.orderStatics.toBeConfirmed
       },
       {
-        label: '待派送',
+        label: 'order.status.confirmed',
         value: 3,
         num: this.orderStatics.confirmed
       },
       {
-        label: '派送中',
+        label: 'order.status.deliveryInProgress',
         value: 4,
         num: this.orderStatics.deliveryInProgress
       },
       {
-        label: '已完成',
+        label: 'order.status.completed',
         value: 5
       },
       {
-        label: '已取消',
+        label: 'order.status.cancelled',
         value: 6
       }
     ]

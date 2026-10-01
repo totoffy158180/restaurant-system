@@ -25,7 +25,7 @@
               :class="theOnlyOneChild.meta.icon"
             />
             <span v-if="theOnlyOneChild.meta.title" slot="title">{{
-              theOnlyOneChild.meta.title
+              $t(theOnlyOneChild.meta.title)
             }}</span>
           </el-menu-item>
         </sidebar-item-link>
@@ -38,7 +38,7 @@
             :class="item.meta.icon"
           />
           <span v-if="item.meta && item.meta.title" slot="title">{{
-            item.meta.title
+            $t(item.meta.title)
           }}</span>
         </template>
         <template v-if="item.children">

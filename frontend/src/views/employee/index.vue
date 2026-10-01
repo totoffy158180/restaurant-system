@@ -2,24 +2,24 @@
   <div class="dashboard-container">
     <div class="container">
       <div class="tableBar">
-        <label style="margin-right: 5px">员工姓名：</label>
+        <label style="margin-right: 5px">{{ $t('employee.nameLabel') }}</label>
         <el-input
           v-model="input"
-          placeholder="请输入员工姓名"
+          :placeholder="$t('employee.searchPlaceholder')"
           style="width: 15%"
           clearable
           @clear="init"
           @keyup.enter.native="initFun"
         />
         <el-button class="normal-btn continue" @click="init(true)"
-          >查询</el-button
+          >{{ $t('common.search') }}</el-button
         >
         <el-button
           type="primary"
           style="float: right"
           @click="addEmployeeHandle('add')"
         >
-          + 添加员工
+          + {{ $t('employee.add') }}
         </el-button>
       </div>
       <el-table
@@ -28,21 +28,21 @@
         v-if="tableData.length"
         class="tableBox"
       >
-        <el-table-column prop="name" label="员工姓名" />
-        <el-table-column prop="username" label="账号" />
-        <el-table-column prop="phone" label="手机号" />
-        <el-table-column label="账号状态">
+        <el-table-column prop="name" :label="$t('employee.column.name')" />
+        <el-table-column prop="username" :label="$t('employee.column.username')" />
+        <el-table-column prop="phone" :label="$t('employee.column.phone')" />
+        <el-table-column :label="$t('employee.column.status')">
           <template slot-scope="scope">
             <div
               class="tableColumn-status"
               :class="{ 'stop-use': String(scope.row.status) === '0' }"
             >
-              {{ String(scope.row.status) === '0' ? '禁用' : '启用' }}
+              {{ String(scope.row.status) === '0' ? $t('common.statusDisabled') : $t('common.statusEnabled') }}
             </div>
           </template>
         </el-table-column>
-        <el-table-column prop="updateTime" label="最后操作时间" />
-        <el-table-column label="操作" width="160" align="center">
+        <el-table-column prop="updateTime" :label="$t('employee.column.updateTime')" />
+        <el-table-column :label="$t('common.operation')" width="160" align="center">
           <template slot-scope="scope">
             <el-button
               type="text"
@@ -52,7 +52,7 @@
               :disabled="scope.row.username === 'admin'"
               @click="addEmployeeHandle(scope.row.id, scope.row.username)"
             >
-              修改
+              {{ $t('common.edit') }}
             </el-button>
             <el-button
               :disabled="scope.row.username === 'admin'"
@@ -66,7 +66,7 @@
               }"
               @click="statusHandle(scope.row)"
             >
-              {{ scope.row.status == '1' ? '禁用' : '启用' }}
+              {{ scope.row.status == '1' ? $t('common.disable') : $t('common.enable') }}
             </el-button>
           </template>
         </el-table-column>
@@ -147,7 +147,7 @@ export default class extends Vue {
         // }
       })
       .catch((err) => {
-        this.$message.error('请求出错了：' + err.message)
+        this.$message.error(this.$t('common.requestError', { message: err.message }) as string)
       })
   }
 
@@ -170,20 +170,20 @@ export default class extends Vue {
     }
     this.id = row.id
     this.status = row.status
-    this.$confirm('确认调整该账号的状态?', '提示', {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
+    this.$confirm(this.$t('employee.statusConfirm') as string, this.$t('common.tip') as string, {
+      confirmButtonText: this.$t('common.confirm') as string,
+      cancelButtonText: this.$t('common.cancel') as string,
       type: 'warning',
     }).then(() => {
       enableOrDisableEmployee({ id: this.id, status: !this.status ? 1 : 0 })
         .then((res) => {
           if (String(res.status) === '200') {
-            this.$message.success('账号状态更改成功！')
+            this.$message.success(this.$t('employee.statusSuccess') as string)
             this.init()
           }
         })
         .catch((err) => {
-          this.$message.error('请求出错了：' + err.message)
+          this.$message.error(this.$t('common.requestError', { message: err.message }) as string)
         })
     })
   }

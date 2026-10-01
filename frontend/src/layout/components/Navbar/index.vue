@@ -1,14 +1,15 @@
 <template>
-  <div class="navbar">
+  <div class="navbar"
+       :class="{ wideMenu: $i18n.locale === 'en' }">
     <div class="statusBox">
       <hamburger id="hamburger-container"
                  :is-active="sidebar.opened"
                  class="hamburger-container"
                  @toggleClick="toggleSideBar" />
       <span v-if="status===1"
-            class="businessBtn">营业中</span>
+            class="businessBtn">{{ $t('navbar.open') }}</span>
       <span v-else
-            class="businessBtn closing">打烊中</span>
+            class="businessBtn closing">{{ $t('navbar.closed') }}</span>
     </div>
 
     <div :key="restKey"
@@ -22,7 +23,8 @@
                hidden>
           <source src="./../../../assets/reminder.mp3" type="audio/mp3" />
         </audio>
-        <span class="navicon operatingState" @click="handleStatus"><i />营业状态设置</span>
+        <span class="navicon operatingState" @click="handleStatus"><i />{{ $t('navbar.statusSetting') }}</span>
+        <language-switch class="languageSwitch" />
       </div>
       <div class="avatar-wrapper">
         <div :class="shopShow?'userInfo':''"
@@ -36,36 +38,36 @@
                class="userList">
             <p class="amendPwdIcon"
                @click="handlePwd">
-              修改密码<i />
+              {{ $t('navbar.changePassword') }}<i />
             </p>
             <p class="outLogin"
                @click="logout">
-              退出登录<i />
+              {{ $t('navbar.logout') }}<i />
             </p>
           </div>
         </div>
       </div>
     </div>
     <!-- 营业状态弹层 -->
-    <el-dialog title="营业状态设置"
+    <el-dialog :title="$t('navbar.statusSetting')"
                :visible.sync="dialogVisible"
                width="25%"
                :show-close="false">
       <el-radio-group v-model="setStatus">
         <el-radio :label="1">
-          营业中
-          <span>当前餐厅处于营业状态，自动接收任何订单，可点击打烊进入店铺打烊状态。</span>
+          {{ $t('navbar.open') }}
+          <span>{{ $t('navbar.openDescription') }}</span>
         </el-radio>
         <el-radio :label="0">
-          打烊中
-          <span>当前餐厅处于打烊状态，仅接受营业时间内的预定订单，可点击营业中手动恢复营业状态。</span>
+          {{ $t('navbar.closed') }}
+          <span>{{ $t('navbar.closedDescription') }}</span>
         </el-radio>
       </el-radio-group>
       <span slot="footer"
             class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button @click="dialogVisible = false">{{ $t('common.cancel') }}</el-button>
         <el-button type="primary"
-                   @click="handleSave">确 定</el-button>
+                   @click="handleSave">{{ $t('common.confirm') }}</el-button>
       </span>
     </el-dialog>
     <!-- end -->
@@ -82,6 +84,7 @@ import { AppModule } from '@/store/modules/app'
 import { UserModule } from '@/store/modules/user'
 import Breadcrumb from '@/components/Breadcrumb/index.vue'
 import Hamburger from '@/components/Hamburger/index.vue'
+import LanguageSwitch from '@/components/LanguageSwitch/index.vue'
 import { getStatus, setStatus } from '@/api/users'
 import Cookies from 'js-cookie'
 import { debounce, throttle } from '@/utils/common'
@@ -97,6 +100,7 @@ import Password from '../components/password.vue'
   components: {
     Breadcrumb,
     Hamburger,
+    LanguageSwitch,
     Password,
   },
 })
@@ -175,8 +179,8 @@ export default class extends Vue {
     console.log(socketUrl, 'socketUrl')
     if (typeof WebSocket == 'undefined') {
       that.$notify({
-        title: '提示',
-        message: '当前浏览器无法接收实时报警信息，请使用谷歌浏览器！',
+        title: that.$t('navbar.notify.tip'),
+        message: that.$t('navbar.notify.browserUnsupported'),
         type: 'warning',
         duration: 0,
       })
@@ -201,7 +205,7 @@ export default class extends Vue {
           that.$refs.audioVo2.play()
         }
         that.$notify({
-          title: jsonMsg.type === 1 ? '待接单' : '催单',
+          title: jsonMsg.type === 1 ? that.$t('navbar.notify.newOrderTitle') : that.$t('navbar.notify.reminderTitle'),
           duration: 0,
           dangerouslyUseHTMLString: true,
           onClick: () => {
@@ -217,16 +221,16 @@ export default class extends Vue {
           // 这里也可以把返回信息加入到message中显示
           message: `${
             jsonMsg.type === 1
-              ? `<span>您有1个<span style=color:#419EFF>订单待处理</span>,${jsonMsg.content},请及时接单</span>`
-              : `${jsonMsg.content}<span style='color:#419EFF;cursor: pointer'>去处理</span>`
+              ? `<span>${that.$t('navbar.notify.youHave')}<span style=color:#419EFF>${that.$t('navbar.notify.pendingOrder')}</span>, ${jsonMsg.content}, ${that.$t('navbar.notify.acceptSoon')}</span>`
+              : `${jsonMsg.content}<span style='color:#419EFF;cursor: pointer'>${that.$t('navbar.notify.handle')}</span>`
           }`,
         })
       }
       // 监听socket错误
       this.websocket.onerror = function () {
         that.$notify({
-          title: '错误',
-          message: '服务器错误，无法接收实时报警信息',
+          title: that.$t('navbar.notify.error'),
+          message: that.$t('navbar.notify.serverError'),
           type: 'error',
           duration: 0,
         })
@@ -350,6 +354,11 @@ export default class extends Vue {
         background: rgba(255, 255, 255, 0.52);
       }
     }
+    .operatingState {
+      width: auto;
+      min-width: 130px;
+      white-space: nowrap;
+    }
     .amendPwdIcon {
       i {
         width: 18px;
@@ -454,6 +463,10 @@ export default class extends Vue {
       }
     }
   }
+  &.wideMenu .avatar-wrapper,
+  &.wideMenu .avatar-wrapper .el-button--primary {
+    width: 180px;
+  }
   .businessBtn {
     height: 22px;
     line-height: 20px;
@@ -475,6 +488,9 @@ export default class extends Vue {
       vertical-align: sub;
       margin: 0 4px 0 0;
     }
+  }
+  .languageSwitch {
+    margin-left: 16px;
   }
   .operatingState {
     i {

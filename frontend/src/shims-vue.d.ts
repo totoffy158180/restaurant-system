@@ -6,3 +6,5 @@ declare module '*.vue' {
 declare module 'is-promise'
 
 declare module '@/config.json'
+
+declare module 'element-ui/lib/locale/lang/*'

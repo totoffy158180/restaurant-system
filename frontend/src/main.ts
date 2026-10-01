@@ -22,7 +22,9 @@ import '@/icons/components'
 import '@/permission'
 import { checkProcessEnv } from '@/utils/common'
 
-Vue.use(ElementUI)
+Vue.use(ElementUI, {
+  i18n: (key: string, value: any) => i18n.t(key, value)
+})
 Vue.use(VueAreaLinkage)
 Vue.use(SvgIcon, {
   'tagName': 'svg-icon',
