@@ -1,17 +1,24 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import { getLanguage } from '@/utils/cookies'
+import elementZhTW from 'element-ui/lib/locale/lang/zh-TW'
+import elementEn from 'element-ui/lib/locale/lang/en'
+import { getLanguage, setLanguage } from '@/utils/cookies'
 import zhTW from './zh-TW.json'
 import en from './en.json'
 
 Vue.use(VueI18n)
 
 const messages = {
-  'zh-TW': zhTW,
-  en
+  'zh-TW': { ...elementZhTW, ...zhTW },
+  en: { ...elementEn, ...en }
 }
 
 export const defaultLanguage = 'zh-TW'
+
+export const languages = [
+  { value: 'en', label: 'EN' },
+  { value: 'zh-TW', label: '繁中' }
+]
 
 export const getLocale = () => {
   const language = getLanguage()
@@ -23,6 +30,12 @@ const i18n = new VueI18n({
   fallbackLocale: defaultLanguage,
   messages
 })
+
+export const changeLanguage = (language: string) => {
+  i18n.locale = language
+  setLanguage(language)
+  document.documentElement.lang = language
+}
 
 export const translateError = (msg: string, data?: any) => {
   const key = `errors.${msg}`

@@ -1,4 +1,53 @@
 {
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "OK",
+    "save": "Save",
+    "pleaseEnter": "Please enter"
+  },
+  "route": {
+    "appName": "Sky Take-out",
+    "dashboard": "Dashboard",
+    "statistics": "Statistics",
+    "order": "Orders",
+    "setmeal": "Set Meals",
+    "dish": "Dishes",
+    "dishAdd": "Add Dish",
+    "category": "Categories",
+    "employee": "Employees",
+    "employeeAdd": "Add Employee",
+    "setmealAdd": "Add Set Meal"
+  },
+  "navbar": {
+    "open": "Open",
+    "closed": "Closed",
+    "statusSetting": "Business Status",
+    "changePassword": "Change Password",
+    "logout": "Log Out",
+    "openDescription": "The restaurant is open and automatically accepts all orders. Select \"Closed\" to close the shop.",
+    "closedDescription": "The restaurant is closed and only accepts pre-orders within business hours. Select \"Open\" to reopen manually.",
+    "notify": {
+      "tip": "Notice",
+      "browserUnsupported": "This browser cannot receive real-time alerts. Please use Google Chrome.",
+      "newOrderTitle": "New Order",
+      "reminderTitle": "Order Reminder",
+      "youHave": "You have 1 ",
+      "pendingOrder": "order pending",
+      "acceptSoon": "please accept it soon",
+      "handle": "Handle",
+      "error": "Error",
+      "serverError": "Server error, unable to receive real-time alerts"
+    }
+  },
+  "password": {
+    "title": "Change Password",
+    "oldPassword": "Current password:",
+    "newPassword": "New password:",
+    "confirmPassword": "Confirm password:",
+    "rule": "6-20 letters or digits, case-sensitive",
+    "reenter": "Please enter the password again",
+    "mismatch": "Passwords do not match, please re-enter"
+  },
   "errors": {
     "PASSWORD_ERROR": "Incorrect password",
     "ACCOUNT_NOT_FOUND": "Account not found",

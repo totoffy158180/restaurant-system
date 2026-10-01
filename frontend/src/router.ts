@@ -29,12 +29,12 @@ const router = new Router({
       path: "/login",
       component: () =>
         import(/* webpackChunkName: "login" */ "@/views/login/index.vue"),
-      meta: { title: "苍穹外卖", hidden: true, notNeedAuth: true }
+      meta: { title: "route.appName", hidden: true, notNeedAuth: true }
     },
     {
       path: "/404",
       component: () => import(/* webpackChunkName: "404" */ "@/views/404.vue"),
-      meta: { title: "苍穹外卖", hidden: true, notNeedAuth: true }
+      meta: { title: "route.appName", hidden: true, notNeedAuth: true }
     },
     {
       path: "/",
@@ -47,7 +47,7 @@ const router = new Router({
             import(/* webpackChunkName: "dashboard" */ "@/views/dashboard/index.vue"),
           name: "Dashboard",
           meta: {
-            title: "工作台",
+            title: "route.dashboard",
             icon: "dashboard",
             affix: true
           }
@@ -57,7 +57,7 @@ const router = new Router({
           component: () =>
             import(/* webpackChunkName: "shopTable" */ "@/views/statistics/index.vue"),
           meta: {
-            title: "数据统计",
+            title: "route.statistics",
             icon: "icon-statistics"
           }
         },
@@ -66,7 +66,7 @@ const router = new Router({
           component: () =>
             import(/* webpackChunkName: "shopTable" */ "@/views/orderDetails/index.vue"),
           meta: {
-            title: "订单管理",
+            title: "route.order",
             icon: "icon-order"
           }
         },
@@ -75,7 +75,7 @@ const router = new Router({
           component: () =>
             import(/* webpackChunkName: "shopTable" */ "@/views/setmeal/index.vue"),
           meta: {
-            title: "套餐管理",
+            title: "route.setmeal",
             icon: "icon-combo"
           }
         },
@@ -84,7 +84,7 @@ const router = new Router({
           component: () =>
             import(/* webpackChunkName: "shopTable" */ "@/views/dish/index.vue"),
           meta: {
-            title: "菜品管理",
+            title: "route.dish",
             icon: "icon-dish"
           }
         },
@@ -93,7 +93,7 @@ const router = new Router({
           component: () =>
             import(/* webpackChunkName: "shopTable" */ "@/views/dish/addDishtype.vue"),
           meta: {
-            title: "添加菜品",
+            title: "route.dishAdd",
             hidden: true
           }
         },
@@ -103,7 +103,7 @@ const router = new Router({
           component: () =>
             import(/* webpackChunkName: "shopTable" */ "@/views/category/index.vue"),
           meta: {
-            title: "分类管理",
+            title: "route.category",
             icon: "icon-category"
           }
         },
@@ -112,7 +112,7 @@ const router = new Router({
           component: () =>
             import(/* webpackChunkName: "shopTable" */ "@/views/employee/index.vue"),
           meta: {
-            title: "员工管理",
+            title: "route.employee",
             icon: "icon-employee"
           }
         },
@@ -122,7 +122,7 @@ const router = new Router({
           component: () =>
             import(/* webpackChunkName: "dashboard" */ "@/views/employee/addEmployee.vue"),
           meta: {
-            title: "添加员工",
+            title: "route.employeeAdd",
             hidden: true
           }
         },
@@ -132,7 +132,7 @@ const router = new Router({
           component: () =>
             import(/* webpackChunkName: "shopTable" */ "@/views/setmeal/addSetmeal.vue"),
           meta: {
-            title: "添加套餐",
+            title: "route.setmealAdd",
             hidden: true
           }
         }
