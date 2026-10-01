@@ -38,6 +38,7 @@
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator'
 import { baseUrl } from '@/config.json'
 import { getToken } from '@/utils/cookies'
+import { translateError } from '@/lang'
 @Component({
   name: 'UploadImage'
 })
@@ -66,6 +67,15 @@ export default class extends Vue {
   }
 
   handleAvatarSuccess(response: any, file: any, fileList: any) {
+    if (!response || response.code !== 1) {
+      this.$message({
+        message: response && response.msg
+          ? translateError(response.msg, response.data)
+          : this.$t('component.imageUpload.failed') as string,
+        type: 'error'
+      })
+      return
+    }
     // this.imageUrl = response.data
     // this.imageUrl = `http://172.17.2.120:8080/common/download?name=${response.data}`
     this.imageUrl = `${response.data}`

@@ -3,3 +3,4 @@
 *.iml
 **/application-local.yml
 *.log
+**/uploads/

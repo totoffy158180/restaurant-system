@@ -38,6 +38,10 @@ module.exports = {
         pathRewrite:{
           '^/api':''
         }
+      },
+      '/uploads': {
+        target: (process.env.VUE_APP_URL || '').replace(/\/admin\/?$/, ''),
+        changeOrigin: true
       }
     }
   },
