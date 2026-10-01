@@ -3,7 +3,8 @@
     "cancel": "Cancel",
     "confirm": "OK",
     "save": "Save",
-    "pleaseEnter": "Please enter"
+    "pleaseEnter": "Please enter",
+    "back": "Back"
   },
   "route": {
     "appName": "Sky Take-out",
@@ -55,6 +56,18 @@
     "loading": "Logging in...",
     "usernameRequired": "Please enter your username",
     "passwordLength": "Password must be at least 6 characters"
+  },
+  "component": {
+    "empty": {
+      "noData": "Nothing here yet~",
+      "noSearchResult": "Sorry, no results match your search~"
+    },
+    "imageUpload": {
+      "delete": "Delete",
+      "reupload": "Re-upload",
+      "failed": "Image upload failed",
+      "sizeLimit": "File size cannot exceed {size}MB!"
+    }
   },
   "errors": {
     "PASSWORD_ERROR": "Incorrect password",

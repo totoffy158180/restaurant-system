@@ -3,7 +3,8 @@
     "cancel": "取 消",
     "confirm": "確 定",
     "save": "儲 存",
-    "pleaseEnter": "請輸入"
+    "pleaseEnter": "請輸入",
+    "back": "返回"
   },
   "route": {
     "appName": "蒼穹外賣",
@@ -55,6 +56,18 @@
     "loading": "登入中...",
     "usernameRequired": "請輸入使用者名稱",
     "passwordLength": "密碼必須在 6 位以上"
+  },
+  "component": {
+    "empty": {
+      "noData": "這裡空空如也～",
+      "noSearchResult": "抱歉，找不到符合搜尋條件的內容～"
+    },
+    "imageUpload": {
+      "delete": "刪除圖片",
+      "reupload": "重新上傳",
+      "failed": "圖片上傳失敗",
+      "sizeLimit": "上傳的檔案大小不能超過 {size}MB！"
+    }
   },
   "errors": {
     "PASSWORD_ERROR": "密碼錯誤",
