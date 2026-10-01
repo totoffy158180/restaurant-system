@@ -1,0 +1,40 @@
+name: Sync translations
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    name: Pull translations from Tolgee
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    env:
+      TOLGEE_API_KEY: ${{ secrets.TOLGEE_API_KEY }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '16'
+      - name: Pull translations
+        if: env.TOLGEE_API_KEY != ''
+        run: npm run i18n:pull
+      - name: Check keys
+        if: env.TOLGEE_API_KEY != ''
+        run: node scripts/check-i18n-keys.js
+      - uses: peter-evans/create-pull-request@v8
+        if: env.TOLGEE_API_KEY != ''
+        with:
+          branch: i18n/sync-tolgee
+          delete-branch: true
+          add-paths: frontend/src/lang/*.json
+          commit-message: 'chore(i18n): sync translations from Tolgee'
+          title: 'chore(i18n): sync translations from Tolgee'
+          body: Automated sync of `frontend/src/lang/*.json` from Tolgee (translated and reviewed strings).
