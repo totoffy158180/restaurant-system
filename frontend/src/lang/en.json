@@ -17,7 +17,14 @@
     "deleteTitle": "Confirm Delete",
     "deleteSuccess": "Deleted!",
     "statusEnabled": "Enabled",
-    "statusDisabled": "Disabled"
+    "statusDisabled": "Disabled",
+    "batchDelete": "Batch Delete",
+    "selectToDelete": "Please select items to delete",
+    "onSale": "On Sale",
+    "offSale": "Off Sale",
+    "startSale": "Enable",
+    "stopSale": "Disable",
+    "noData": "No data"
   },
   "route": {
     "appName": "Sky Take-out",
@@ -79,7 +86,11 @@
       "delete": "Delete",
       "reupload": "Re-upload",
       "failed": "Image upload failed",
-      "sizeLimit": "File size cannot exceed {size}MB!"
+      "sizeLimit": "File size cannot exceed {size}MB!",
+      "tipSize": "Image size up to 2MB",
+      "tipType": "PNG, JPEG, and JPG only",
+      "tipDimension": "Recommended size: 200×200 or 300×300",
+      "upload": "Upload Image"
     }
   },
   "employee": {
@@ -163,6 +174,75 @@
     "deleteConfirm": "This will permanently delete the category. Continue?",
     "addSuccess": "Category added!",
     "editSuccess": "Category updated!"
+  },
+  "dish": {
+    "nameLabel": "Name:",
+    "searchPlaceholder": "Enter name",
+    "categoryLabel": "Category:",
+    "saleStatusLabel": "Status:",
+    "add": "New Dish",
+    "column": {
+      "name": "Name",
+      "image": "Image",
+      "category": "Category",
+      "price": "Price",
+      "saleStatus": "Status",
+      "updateTime": "Last Updated"
+    },
+    "deleteConfirm": "Are you sure you want to delete this dish?",
+    "selectForBatch": "Please select dishes before batch operations!",
+    "statusConfirm": "Are you sure you want to change this dish's status?",
+    "statusSuccess": "Dish status updated!",
+    "form": {
+      "name": "Name:",
+      "namePlaceholder": "Enter dish name",
+      "category": "Category:",
+      "categoryPlaceholder": "Select a category",
+      "price": "Price:",
+      "pricePlaceholder": "Enter price",
+      "flavor": "Flavor Options:",
+      "image": "Image:",
+      "description": "Description:",
+      "descriptionPlaceholder": "Dish description, up to 200 characters"
+    },
+    "addFlavor": "Add Flavor",
+    "flavorName": "Flavor name",
+    "flavorPlaceholder": "Select a flavor",
+    "flavor": {
+      "sweetness": "Sweetness",
+      "noSugar": "No Sugar",
+      "lessSugar": "Less Sugar",
+      "halfSugar": "Half Sugar",
+      "moreSugar": "More Sugar",
+      "fullSugar": "Full Sugar",
+      "temperature": "Temperature",
+      "hot": "Hot",
+      "roomTemperature": "Room Temp",
+      "noIce": "No Ice",
+      "lessIce": "Less Ice",
+      "moreIce": "More Ice",
+      "avoid": "Avoid",
+      "noScallion": "No Scallion",
+      "noGarlic": "No Garlic",
+      "noCilantro": "No Cilantro",
+      "noChili": "No Chili",
+      "spiciness": "Spiciness",
+      "notSpicy": "Not Spicy",
+      "mild": "Mild",
+      "medium": "Medium",
+      "extraSpicy": "Extra Spicy"
+    },
+    "saveAndContinue": "Save and Add Another",
+    "rules": {
+      "nameRequired": "Please enter a dish name",
+      "nameInvalid": "Name must be 2-20 letters or digits",
+      "categoryRequired": "Please select a category",
+      "imageRequired": "Please upload a dish image",
+      "priceInvalid": "Enter an amount above 0 (max 2 decimals)",
+      "codeRequired": "Please enter a product code"
+    },
+    "addSuccess": "Dish added!",
+    "editSuccess": "Dish updated!"
   },
   "errors": {
     "PASSWORD_ERROR": "Incorrect password",

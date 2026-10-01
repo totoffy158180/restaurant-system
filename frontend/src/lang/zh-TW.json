@@ -17,7 +17,14 @@
     "deleteTitle": "確定刪除",
     "deleteSuccess": "刪除成功！",
     "statusEnabled": "啟用",
-    "statusDisabled": "停用"
+    "statusDisabled": "停用",
+    "batchDelete": "批次刪除",
+    "selectToDelete": "請選擇要刪除的項目",
+    "onSale": "啟售",
+    "offSale": "停售",
+    "startSale": "啟售",
+    "stopSale": "停售",
+    "noData": "無資料"
   },
   "route": {
     "appName": "蒼穹外賣",
@@ -79,7 +86,11 @@
       "delete": "刪除圖片",
       "reupload": "重新上傳",
       "failed": "圖片上傳失敗",
-      "sizeLimit": "上傳的檔案大小不能超過 {size}MB！"
+      "sizeLimit": "上傳的檔案大小不能超過 {size}MB！",
+      "tipSize": "圖片大小不超過 2MB",
+      "tipType": "僅能上傳 PNG、JPEG、JPG 格式的圖片",
+      "tipDimension": "建議上傳 200×200 或 300×300 尺寸的圖片",
+      "upload": "上傳圖片"
     }
   },
   "employee": {
@@ -163,6 +174,75 @@
     "deleteConfirm": "此操作將永久刪除該分類，是否繼續？",
     "addSuccess": "分類新增成功！",
     "editSuccess": "分類修改成功！"
+  },
+  "dish": {
+    "nameLabel": "菜品名稱：",
+    "searchPlaceholder": "請輸入菜品名稱",
+    "categoryLabel": "菜品分類：",
+    "saleStatusLabel": "售賣狀態：",
+    "add": "新增菜品",
+    "column": {
+      "name": "菜品名稱",
+      "image": "圖片",
+      "category": "菜品分類",
+      "price": "售價",
+      "saleStatus": "售賣狀態",
+      "updateTime": "最後操作時間"
+    },
+    "deleteConfirm": "確定要刪除該菜品嗎？",
+    "selectForBatch": "批次操作前，請先勾選菜品！",
+    "statusConfirm": "確定要更改該菜品的狀態嗎？",
+    "statusSuccess": "菜品狀態更改成功！",
+    "form": {
+      "name": "菜品名稱：",
+      "namePlaceholder": "請輸入菜品名稱",
+      "category": "菜品分類：",
+      "categoryPlaceholder": "請選擇菜品分類",
+      "price": "菜品價格：",
+      "pricePlaceholder": "請設定菜品價格",
+      "flavor": "口味做法設定：",
+      "image": "菜品圖片：",
+      "description": "菜品描述：",
+      "descriptionPlaceholder": "菜品描述，最多 200 字"
+    },
+    "addFlavor": "新增口味",
+    "flavorName": "口味名稱（3 個字以內）",
+    "flavorPlaceholder": "請選擇口味",
+    "flavor": {
+      "sweetness": "甜味",
+      "noSugar": "無糖",
+      "lessSugar": "少糖",
+      "halfSugar": "半糖",
+      "moreSugar": "多糖",
+      "fullSugar": "全糖",
+      "temperature": "溫度",
+      "hot": "熱飲",
+      "roomTemperature": "常溫",
+      "noIce": "去冰",
+      "lessIce": "少冰",
+      "moreIce": "多冰",
+      "avoid": "忌口",
+      "noScallion": "不要蔥",
+      "noGarlic": "不要蒜",
+      "noCilantro": "不要香菜",
+      "noChili": "不要辣",
+      "spiciness": "辣度",
+      "notSpicy": "不辣",
+      "mild": "微辣",
+      "medium": "中辣",
+      "extraSpicy": "重辣"
+    },
+    "saveAndContinue": "儲存並繼續新增",
+    "rules": {
+      "nameRequired": "請輸入菜品名稱",
+      "nameInvalid": "菜品名稱格式不符，請輸入 2-20 個字元",
+      "categoryRequired": "請選擇菜品分類",
+      "imageRequired": "請上傳菜品圖片",
+      "priceInvalid": "請輸入大於零的金額（最多兩位小數）",
+      "codeRequired": "請輸入商品碼"
+    },
+    "addSuccess": "菜品新增成功！",
+    "editSuccess": "菜品修改成功！"
   },
   "errors": {
     "PASSWORD_ERROR": "密碼錯誤",

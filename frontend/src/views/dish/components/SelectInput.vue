@@ -1,10 +1,10 @@
 <template>
   <div class="selectInput">
     <el-input
-      v-model="value"
+      :value="flavorLabel(value)"
       type="text"
       style="width: 100%"
-      placeholder="请选择口味"
+      :placeholder="$t('dish.flavorPlaceholder')"
       clearable
       readonly
       @focus="selectFlavor(true)"
@@ -16,15 +16,16 @@
         :key="ind"
         class="items"
         @click="checkOption(it, ind)"
-        >{{ it.name }}</span
+        >{{ flavorLabel(it.name) }}</span
       >
-      <span v-if="dishFlavorsData == []" class="none">无数据</span>
+      <span v-if="dishFlavorsData == []" class="none">{{ $t('common.noData') }}</span>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import { flavorLabel } from '@/utils/flavor'
 
 @Component({
   name: 'selectInput',
@@ -37,6 +38,7 @@ export default class extends Vue {
   private keyValue = NaN
 
   private mak: boolean = false
+  private flavorLabel = flavorLabel
 
   private selectFlavor(st: boolean) {
     this.mak = st

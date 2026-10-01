@@ -17,7 +17,8 @@
            class="avatar">
 
       <i v-else
-         class="el-icon-plus avatar-uploader-icon" />
+         class="el-icon-plus avatar-uploader-icon"
+         :data-text="$t('component.imageUpload.upload')" />
       <span v-if="imageUrl"
             class="el-upload-list__item-actions">
         <span class="el-upload-span"

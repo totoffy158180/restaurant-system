@@ -2,18 +2,18 @@
   <div class="dashboard-container">
     <div class="container">
       <div class="tableBar">
-        <label style="margin-right: 10px">菜品名称：</label>
+        <label style="margin-right: 10px">{{ $t('dish.nameLabel') }}</label>
         <el-input v-model="input"
-                  placeholder="请填写菜品名称"
+                  :placeholder="$t('dish.searchPlaceholder')"
                   style="width: 14%"
                   clearable
                   @clear="init"
                   @keyup.enter.native="initFun" />
 
-        <label style="margin-right: 10px; margin-left: 20px">菜品分类：</label>
+        <label style="margin-right: 10px; margin-left: 20px">{{ $t('dish.categoryLabel') }}</label>
         <el-select v-model="categoryId"
                    style="width: 14%"
-                   placeholder="请选择"
+                   :placeholder="$t('common.pleaseSelect')"
                    clearable
                    @clear="init">
           <el-option v-for="item in dishCategoryList"
@@ -22,25 +22,25 @@
                      :value="item.value" />
         </el-select>
 
-        <label style="margin-right: 10px; margin-left: 20px">售卖状态：</label>
+        <label style="margin-right: 10px; margin-left: 20px">{{ $t('dish.saleStatusLabel') }}</label>
         <el-select v-model="dishStatus"
                    style="width: 14%"
-                   placeholder="请选择"
+                   :placeholder="$t('common.pleaseSelect')"
                    clearable
                    @clear="init">
           <el-option v-for="item in saleStatus"
                      :key="item.value"
-                     :label="item.label"
+                     :label="$t(item.label)"
                      :value="item.value" />
         </el-select>
         <el-button class="normal-btn continue"
                    @click="init(true)">
-          查询
+          {{ $t('common.search') }}
         </el-button>
 
         <div class="tableLab">
           <span class="delBut non"
-                @click="deleteHandle('批量', null)">批量删除</span>
+                @click="deleteHandle('batch', null)">{{ $t('common.batchDelete') }}</span>
           <!-- <span class="blueBug non" @click="statusHandle('1')">批量启售</span>
           <span
             style="border: none"
@@ -51,7 +51,7 @@
           <el-button type="primary"
                      style="margin-left: 15px"
                      @click="addDishtype('add')">
-            + 新建菜品
+            + {{ $t('dish.add') }}
           </el-button>
         </div>
       </div>
@@ -63,9 +63,9 @@
         <el-table-column type="selection"
                          width="25" />
         <el-table-column prop="name"
-                         label="菜品名称" />
+                         :label="$t('dish.column.name')" />
         <el-table-column prop="image"
-                         label="图片">
+                         :label="$t('dish.column.image')">
           <template slot-scope="{ row }">
             <el-image style="width: 80px; height: 40px; border: none; cursor: pointer"
                       :src="row.image">
@@ -78,23 +78,23 @@
           </template>
         </el-table-column>
         <el-table-column prop="categoryName"
-                         label="菜品分类" />
-        <el-table-column label="售价">
+                         :label="$t('dish.column.category')" />
+        <el-table-column :label="$t('dish.column.price')">
           <template slot-scope="scope">
             <span style="margin-right: 10px">￥{{ (scope.row.price ).toFixed(2)*100/100 }}</span>
           </template>
         </el-table-column>
-        <el-table-column label="售卖状态">
+        <el-table-column :label="$t('dish.column.saleStatus')">
           <template slot-scope="scope">
             <div class="tableColumn-status"
                  :class="{ 'stop-use': String(scope.row.status) === '0' }">
-              {{ String(scope.row.status) === '0' ? '停售' : '启售' }}
+              {{ String(scope.row.status) === '0' ? $t('common.offSale') : $t('common.onSale') }}
             </div>
           </template>
         </el-table-column>
         <el-table-column prop="updateTime"
-                         label="最后操作时间" />
-        <el-table-column label="操作"
+                         :label="$t('dish.column.updateTime')" />
+        <el-table-column :label="$t('common.operation')"
                          width="250"
                          align="center">
           <template slot-scope="scope">
@@ -102,13 +102,13 @@
                        size="small"
                        class="blueBug"
                        @click="addDishtype(scope.row.id)">
-              修改
+              {{ $t('common.edit') }}
             </el-button>
             <el-button type="text"
                        size="small"
                        class="delBut"
-                       @click="deleteHandle('单删', scope.row.id)">
-              删除
+                       @click="deleteHandle('single', scope.row.id)">
+              {{ $t('common.delete') }}
             </el-button>
             <el-button type="text"
                        size="small"
@@ -118,7 +118,7 @@
                          delBut: scope.row.status != '0'
                        }"
                        @click="statusHandle(scope.row)">
-              {{ scope.row.status == '0' ? '启售' : '停售' }}
+              {{ scope.row.status == '0' ? $t('common.startSale') : $t('common.stopSale') }}
             </el-button>
           </template>
         </el-table-column>
@@ -174,11 +174,11 @@ export default class extends Vue {
   private saleStatus: any = [
     {
       value: 0,
-      label: '停售'
+      label: 'common.offSale'
     },
     {
       value: 1,
-      label: '启售'
+      label: 'common.onSale'
     }
   ]
 
@@ -213,7 +213,7 @@ export default class extends Vue {
         }
       })
       .catch(err => {
-        this.$message.error('请求出错了：' + err.message)
+        this.$message.error(this.$t('common.requestError', { message: err.message }) as string)
       })
   }
 
@@ -228,27 +228,27 @@ export default class extends Vue {
 
   // 删除
   private deleteHandle(type: string, id: any) {
-    if (type === '批量' && id === null) {
+    if (type === 'batch' && id === null) {
       if (this.checkList.length === 0) {
-        return this.$message.error('请选择删除对象')
+        return this.$message.error(this.$t('common.selectToDelete') as string)
       }
     }
-    this.$confirm('确认删除该菜品, 是否继续?', '确定删除', {
-      confirmButtonText: '删除',
-      cancelButtonText: '取消',
+    this.$confirm(this.$t('dish.deleteConfirm') as string, this.$t('common.deleteTitle') as string, {
+      confirmButtonText: this.$t('common.delete') as string,
+      cancelButtonText: this.$t('common.cancel') as string,
       type: 'warning'
     }).then(() => {
-      deleteDish(type === '批量' ? this.checkList.join(',') : id)
+      deleteDish(type === 'batch' ? this.checkList.join(',') : id)
         .then(res => {
           if (res && res.data && res.data.code === 1) {
-            this.$message.success('删除成功！')
+            this.$message.success(this.$t('common.deleteSuccess') as string)
             this.init()
           } else {
             this.$message.error(res.data.msg)
           }
         })
         .catch(err => {
-          this.$message.error('请求出错了：' + err.message)
+          this.$message.error(this.$t('common.requestError', { message: err.message }) as string)
         })
     })
   }
@@ -276,7 +276,7 @@ export default class extends Vue {
     let params: any = {}
     if (typeof row === 'string') {
       if (this.checkList.length === 0) {
-        this.$message.error('批量操作，请先勾选操作菜品！')
+        this.$message.error(this.$t('dish.selectForBatch') as string)
         return false
       }
       params.id = this.checkList.join(',')
@@ -286,23 +286,23 @@ export default class extends Vue {
       params.status = row.status ? '0' : '1'
     }
     this.dishState = params
-    this.$confirm('确认更改该菜品状态?', '提示', {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
+    this.$confirm(this.$t('dish.statusConfirm') as string, this.$t('common.tip') as string, {
+      confirmButtonText: this.$t('common.confirm') as string,
+      cancelButtonText: this.$t('common.cancel') as string,
       type: 'warning'
     }).then(() => {
       // 起售停售---批量起售停售接口
       dishStatusByStatus(this.dishState)
         .then(res => {
           if (res && res.data && res.data.code === 1) {
-            this.$message.success('菜品状态已经更改成功！')
+            this.$message.success(this.$t('dish.statusSuccess') as string)
             this.init()
           } else {
             this.$message.error(res.data.msg)
           }
         })
         .catch(err => {
-          this.$message.error('请求出错了：' + err.message)
+          this.$message.error(this.$t('common.requestError', { message: err.message }) as string)
         })
     })
   }
