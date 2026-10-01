@@ -37,7 +37,7 @@
               class="tableColumn-status"
               :class="{ 'stop-use': String(scope.row.status) === '0' }"
             >
-              {{ String(scope.row.status) === '0' ? $t('employee.status.disabled') : $t('employee.status.enabled') }}
+              {{ String(scope.row.status) === '0' ? $t('common.statusDisabled') : $t('common.statusEnabled') }}
             </div>
           </template>
         </el-table-column>

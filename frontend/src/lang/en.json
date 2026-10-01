@@ -11,7 +11,13 @@
     "enable": "Enable",
     "disable": "Disable",
     "tip": "Notice",
-    "requestError": "Request failed: {message}"
+    "requestError": "Request failed: {message}",
+    "pleaseSelect": "Please select",
+    "delete": "Delete",
+    "deleteTitle": "Confirm Delete",
+    "deleteSuccess": "Deleted!",
+    "statusEnabled": "Enabled",
+    "statusDisabled": "Disabled"
   },
   "route": {
     "appName": "Sky Take-out",
@@ -89,10 +95,6 @@
       "status": "Status",
       "updateTime": "Last Updated"
     },
-    "status": {
-      "enabled": "Enabled",
-      "disabled": "Disabled"
-    },
     "statusConfirm": "Are you sure you want to change this account's status?",
     "statusSuccess": "Account status updated!",
     "form": {
@@ -122,6 +124,45 @@
     },
     "addSuccess": "Employee added!",
     "editSuccess": "Employee updated!"
+  },
+  "category": {
+    "nameLabel": "Name:",
+    "searchPlaceholder": "Enter name",
+    "typeLabel": "Type:",
+    "type": {
+      "dish": "Dish Category",
+      "setmeal": "Set Meal Category"
+    },
+    "addDishCategory": "Add Dish Category",
+    "addSetmealCategory": "Add Set Meal Category",
+    "editCategory": "Edit Category",
+    "column": {
+      "name": "Name",
+      "type": "Type",
+      "sort": "Sort",
+      "status": "Status",
+      "updateTime": "Last Updated"
+    },
+    "form": {
+      "name": "Name:",
+      "namePlaceholder": "Enter category name",
+      "sort": "Sort:",
+      "sortPlaceholder": "Enter sort order"
+    },
+    "saveAndContinue": "Save and Add Another",
+    "rules": {
+      "nameRequired": "Please enter a category name",
+      "nameLength": "Category name must be 2-20 characters",
+      "nameSpecialChars": "Category name cannot contain special characters",
+      "sortRequired": "Please enter a sort order",
+      "sortNumber": "Sort order must be a number",
+      "sortRange": "Sort order must be between 0 and 99"
+    },
+    "statusConfirm": "Are you sure you want to change this category's status?",
+    "statusSuccess": "Category status updated!",
+    "deleteConfirm": "This will permanently delete the category. Continue?",
+    "addSuccess": "Category added!",
+    "editSuccess": "Category updated!"
   },
   "errors": {
     "PASSWORD_ERROR": "Incorrect password",
