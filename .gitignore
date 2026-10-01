@@ -18,9 +18,6 @@ target/
 application-local.yml
 dump.rdb
 /backend/**/uploads/
-# 課程原本排除測試檔，之後要跑 CI 測試再拿掉
-*Test.java
-**/test/
 
 # ===== frontend =====
 node_modules/
