@@ -24,7 +24,8 @@
     "offSale": "Off Sale",
     "startSale": "Enable",
     "stopSale": "Disable",
-    "noData": "No data"
+    "noData": "No data",
+    "add": "Add"
   },
   "route": {
     "appName": "Sky Take-out",
@@ -243,6 +244,55 @@
     },
     "addSuccess": "Dish added!",
     "editSuccess": "Dish updated!"
+  },
+  "setmeal": {
+    "nameLabel": "Name:",
+    "searchPlaceholder": "Enter name",
+    "categoryLabel": "Category:",
+    "saleStatusLabel": "Status:",
+    "add": "New Set Meal",
+    "column": {
+      "name": "Name",
+      "image": "Image",
+      "category": "Category",
+      "price": "Price",
+      "saleStatus": "Status",
+      "updateTime": "Last Updated"
+    },
+    "deleteConfirm": "Are you sure you want to delete this set meal?",
+    "selectForBatch": "Please select set meals before batch operations!",
+    "statusConfirm": "Are you sure you want to change this set meal's status?",
+    "statusSuccess": "Set meal status updated!",
+    "form": {
+      "name": "Name:",
+      "namePlaceholder": "Enter set meal name",
+      "category": "Category:",
+      "categoryPlaceholder": "Select a category",
+      "price": "Price:",
+      "pricePlaceholder": "Enter price",
+      "dishes": "Dishes:",
+      "image": "Image:",
+      "description": "Description:",
+      "descriptionPlaceholder": "Set meal description, up to 200 characters"
+    },
+    "addDish": "Add Dish",
+    "searchDishPlaceholder": "Search dishes by name",
+    "selectedDishes": "Selected ({count})",
+    "dishColumn": {
+      "name": "Name",
+      "price": "Original Price",
+      "copies": "Quantity"
+    },
+    "saveAndContinue": "Save and Add Another",
+    "rules": {
+      "nameRequired": "Please enter a set meal name",
+      "nameInvalid": "Name must be 2-20 letters or digits",
+      "categoryRequired": "Please select a category",
+      "imageRequired": "Please upload a set meal image",
+      "dishesRequired": "A set meal must contain at least one dish"
+    },
+    "addSuccess": "Set meal added!",
+    "editSuccess": "Set meal updated!"
   },
   "errors": {
     "PASSWORD_ERROR": "Incorrect password",

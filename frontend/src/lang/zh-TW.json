@@ -24,7 +24,8 @@
     "offSale": "停售",
     "startSale": "啟售",
     "stopSale": "停售",
-    "noData": "無資料"
+    "noData": "無資料",
+    "add": "新增"
   },
   "route": {
     "appName": "蒼穹外賣",
@@ -243,6 +244,55 @@
     },
     "addSuccess": "菜品新增成功！",
     "editSuccess": "菜品修改成功！"
+  },
+  "setmeal": {
+    "nameLabel": "套餐名稱：",
+    "searchPlaceholder": "請輸入套餐名稱",
+    "categoryLabel": "套餐分類：",
+    "saleStatusLabel": "售賣狀態：",
+    "add": "新增套餐",
+    "column": {
+      "name": "套餐名稱",
+      "image": "圖片",
+      "category": "套餐分類",
+      "price": "套餐價",
+      "saleStatus": "售賣狀態",
+      "updateTime": "最後操作時間"
+    },
+    "deleteConfirm": "確定要刪除該套餐嗎？",
+    "selectForBatch": "批次操作前，請先勾選套餐！",
+    "statusConfirm": "確定要更改該套餐的狀態嗎？",
+    "statusSuccess": "套餐狀態更改成功！",
+    "form": {
+      "name": "套餐名稱：",
+      "namePlaceholder": "請輸入套餐名稱",
+      "category": "套餐分類：",
+      "categoryPlaceholder": "請選擇套餐分類",
+      "price": "套餐價格：",
+      "pricePlaceholder": "請設定套餐價格",
+      "dishes": "套餐菜品：",
+      "image": "套餐圖片：",
+      "description": "套餐描述：",
+      "descriptionPlaceholder": "套餐描述，最多 200 字"
+    },
+    "addDish": "新增菜品",
+    "searchDishPlaceholder": "請輸入菜品名稱搜尋",
+    "selectedDishes": "已選菜品（{count}）",
+    "dishColumn": {
+      "name": "名稱",
+      "price": "原價",
+      "copies": "份數"
+    },
+    "saveAndContinue": "儲存並繼續新增",
+    "rules": {
+      "nameRequired": "請輸入套餐名稱",
+      "nameInvalid": "套餐名稱格式不符，請輸入 2-20 個字元",
+      "categoryRequired": "請選擇套餐分類",
+      "imageRequired": "請上傳套餐圖片",
+      "dishesRequired": "套餐內至少要有一道菜品"
+    },
+    "addSuccess": "套餐新增成功！",
+    "editSuccess": "套餐修改成功！"
   },
   "errors": {
     "PASSWORD_ERROR": "密碼錯誤",
