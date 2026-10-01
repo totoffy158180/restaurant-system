@@ -1,10 +1,17 @@
 {
   "common": {
-    "cancel": "取 消",
-    "confirm": "確 定",
-    "save": "儲 存",
+    "cancel": "取消",
+    "confirm": "確定",
+    "save": "儲存",
     "pleaseEnter": "請輸入",
-    "back": "返回"
+    "back": "返回",
+    "search": "查詢",
+    "edit": "修改",
+    "operation": "操作",
+    "enable": "啟用",
+    "disable": "停用",
+    "tip": "提示",
+    "requestError": "請求發生錯誤：{message}"
   },
   "route": {
     "appName": "蒼穹外賣",
@@ -68,6 +75,53 @@
       "failed": "圖片上傳失敗",
       "sizeLimit": "上傳的檔案大小不能超過 {size}MB！"
     }
+  },
+  "employee": {
+    "nameLabel": "員工姓名：",
+    "searchPlaceholder": "請輸入員工姓名",
+    "add": "新增員工",
+    "addTitle": "新增員工",
+    "editTitle": "修改員工資訊",
+    "column": {
+      "name": "員工姓名",
+      "username": "帳號",
+      "phone": "手機號碼",
+      "status": "帳號狀態",
+      "updateTime": "最後操作時間"
+    },
+    "status": {
+      "enabled": "啟用",
+      "disabled": "停用"
+    },
+    "statusConfirm": "確定要調整該帳號的狀態嗎？",
+    "statusSuccess": "帳號狀態更改成功！",
+    "form": {
+      "username": "帳號：",
+      "usernamePlaceholder": "請輸入帳號",
+      "name": "員工姓名：",
+      "namePlaceholder": "請輸入員工姓名",
+      "phone": "手機號碼：",
+      "phonePlaceholder": "請輸入手機號碼",
+      "sex": "性別：",
+      "idNumber": "身分證字號：",
+      "idNumberPlaceholder": "請輸入身分證字號"
+    },
+    "sex": {
+      "male": "男",
+      "female": "女"
+    },
+    "saveAndContinue": "儲存並繼續新增",
+    "rules": {
+      "nameRequired": "請輸入員工姓名",
+      "usernameRequired": "請輸入帳號",
+      "usernameInvalid": "帳號格式不符，請輸入 3-20 個小寫英文字母或數字",
+      "phoneRequired": "請輸入手機號碼",
+      "phoneInvalid": "請輸入正確的手機號碼！",
+      "idNumberRequired": "請輸入身分證字號",
+      "idNumberInvalid": "身分證字號格式不正確"
+    },
+    "addSuccess": "員工新增成功！",
+    "editSuccess": "員工資訊修改成功！"
   },
   "errors": {
     "PASSWORD_ERROR": "密碼錯誤",

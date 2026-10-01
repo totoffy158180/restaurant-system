@@ -4,7 +4,14 @@
     "confirm": "OK",
     "save": "Save",
     "pleaseEnter": "Please enter",
-    "back": "Back"
+    "back": "Back",
+    "search": "Search",
+    "edit": "Edit",
+    "operation": "Actions",
+    "enable": "Enable",
+    "disable": "Disable",
+    "tip": "Notice",
+    "requestError": "Request failed: {message}"
   },
   "route": {
     "appName": "Sky Take-out",
@@ -68,6 +75,53 @@
       "failed": "Image upload failed",
       "sizeLimit": "File size cannot exceed {size}MB!"
     }
+  },
+  "employee": {
+    "nameLabel": "Name:",
+    "searchPlaceholder": "Enter name",
+    "add": "Add Employee",
+    "addTitle": "Add Employee",
+    "editTitle": "Edit Employee",
+    "column": {
+      "name": "Name",
+      "username": "Username",
+      "phone": "Phone",
+      "status": "Status",
+      "updateTime": "Last Updated"
+    },
+    "status": {
+      "enabled": "Enabled",
+      "disabled": "Disabled"
+    },
+    "statusConfirm": "Are you sure you want to change this account's status?",
+    "statusSuccess": "Account status updated!",
+    "form": {
+      "username": "Username:",
+      "usernamePlaceholder": "Enter username",
+      "name": "Name:",
+      "namePlaceholder": "Enter employee name",
+      "phone": "Phone:",
+      "phonePlaceholder": "Enter phone number",
+      "sex": "Gender:",
+      "idNumber": "ID Number:",
+      "idNumberPlaceholder": "Enter ID number"
+    },
+    "sex": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "saveAndContinue": "Save and Add Another",
+    "rules": {
+      "nameRequired": "Please enter the employee name",
+      "usernameRequired": "Please enter a username",
+      "usernameInvalid": "Username must be 3-20 lowercase letters or digits",
+      "phoneRequired": "Please enter a phone number",
+      "phoneInvalid": "Please enter a valid phone number!",
+      "idNumberRequired": "Please enter an ID number",
+      "idNumberInvalid": "Invalid ID number"
+    },
+    "addSuccess": "Employee added!",
+    "editSuccess": "Employee updated!"
   },
   "errors": {
     "PASSWORD_ERROR": "Incorrect password",
